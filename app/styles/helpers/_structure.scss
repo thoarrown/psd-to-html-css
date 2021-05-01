@@ -1,0 +1,19 @@
+.block-box {
+  text-align: center;
+  &-heading {
+    font-family: $secondary-font;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: $title-color;
+    padding-top: 1.5rem;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      transform: translateX(50%);
+      background-color: $secondary-color;
+      @include size(6rem, 1.5px);
+    }
+  }
+}
