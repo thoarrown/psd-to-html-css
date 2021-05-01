@@ -1,0 +1,24 @@
+body {
+  font-family: $primary-font;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  min-height: 1000px;
+}
+* {
+  box-sizing: content-box;
+}
+.container {
+  max-width: $container;
+  margin: 0 auto;
+}
+.content {
+  max-width: $content;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  width: 100%;
+}

@@ -1,0 +1,57 @@
+.header {
+  padding: 1rem 0;
+  background-color: $primary-color;
+  max-width: 100%;
+  .header-wrapper {
+    @include flexbox(center, space-between);
+  }
+  .header-logo {
+    color: $title-color;
+    font-size: 2.6rem;
+    font-weight: bold;
+  }
+  .header-menu ul {
+    @include flexbox;
+  }
+  .menu-item {
+    padding: 1rem;
+  }
+  .menu-link {
+    color: $title-color;
+    font-weight: 600;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+  .header-hambuger {
+    display: none;
+  }
+
+  @include maxWidth(767px) {
+    position: relative;
+    .header-hambuger {
+      display: inline-block;
+      margin-left: auto;
+    }
+    &-wrapper {
+      padding: 1rem;
+    }
+    .header-menu {
+      ul {
+        height: 100vh;
+        background-color: white;
+        position: fixed;
+        padding: 2rem;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        width: 30rem;
+        transition: all 0.2s linear;
+        transform: translateX(100%);
+      }
+    }
+    .header-menu ul.is-active {
+      transform: translateX(0%);
+    }
+  }
+}

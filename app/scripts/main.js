@@ -1,3 +1,17 @@
+const barToggle = document.querySelector(".header-hambuger");
+const menuMobile = document.querySelector(".header-menu");
+document.addEventListener("click", function (e) {
+  console.log(e.target.classList.contains("is-active"));
+  if (e.target.classList.contains("header-hambuger")) {
+    menuMobile.querySelector("ul").classList.add("is-active");
+  } else if (
+    !e.target.classList.contains("is-active") &&
+    !e.target.classList.contains("menu-item") &&
+    !e.target.classList.contains("menu-link")
+  ) {
+    menuMobile.querySelector("ul").classList.remove("is-active");
+  }
+});
 // Slick slider
 // $(document).ready(function () {
 //   $(".quote-list").slick({

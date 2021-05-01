@@ -1,0 +1,18 @@
+@mixin flexbox(
+  $align-items: stretch,
+  $justify-content: stretch,
+  $flex-direction: row,
+  $flex-wrap: nowrap
+) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin maxWidth($maxWidth) {
+  @media (max-width: $maxWidth) {
+    @content;
+  }
+}
