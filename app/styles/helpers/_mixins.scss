@@ -1,0 +1,141 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin bg($color) {
+  background-color: $color;
+}
+
+@mixin absoluteCenter($direction: "left", $position: absolute) {
+  position: $position;
+  @if $direction == "left" {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $direction == "top" {
+    left: 0;
+    top: 50%;
+  }
+  @if $direction == "right" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $direction == "both" {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin absoluteFull() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin maxWidth($break-point) {
+  @media screen and (max-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin minWidth($break-point) {
+  @media screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin flexBox(
+  $align-items: stretch,
+  $justify-content: flex-start,
+  $direction: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+// hidescroll
+@mixin hideScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin textClamp($row: 1, $size: 100%, $wordBreak: break-all) {
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: hidden;
+  width: $size;
+  max-width: $size;
+  white-space: pre-wrap;
+  word-break: $wordBreak;
+}
+
+@mixin hoverEffect($itemClass, $contentClass, $transform: true) {
+  #{$itemClass} {
+    transition: all 0.25s linear;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    #{$contentClass} {
+      @include absoluteFull();
+      z-index: 2;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s linear;
+      background: linear-gradient(
+        to bottom,
+        rgba($primary-color, 0.8),
+        rgba($secondary-color, 0.8)
+      );
+      @include flexBox(center, center, column);
+    }
+    &:after {
+      content: "";
+      transition: all 0.25s linear;
+      @include absoluteFull();
+      background-color: $third-color;
+      z-index: -1;
+    }
+    &:hover {
+      @if $transform {
+        transform: translate(-1rem, -1rem);
+        &:after {
+          transform: translate(1rem, 1rem);
+        }
+      }
+      #{$contentClass} {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@mixin touchScroll($width: 80%, $gap: 2.5rem, $padding: 1rem) {
+  display: grid !important;
+  justify-content: flex-start !important;
+  grid-auto-columns: $width;
+  grid-auto-flow: column;
+  grid-template-columns: unset;
+  grid-column-gap: $gap;
+  overflow-x: auto;
+  padding: $padding;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  @include hideScroll();
+  & > * {
+    width: auto;
+    scroll-snap-align: center;
+  }
+}

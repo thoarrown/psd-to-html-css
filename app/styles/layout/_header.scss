@@ -1,0 +1,195 @@
+.header {
+  min-height: 100rem;
+  color: white;
+  background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.8),
+      rgba($secondary-color, 0.8)
+    ),
+    url(../../images/img-header-bg.jpg) no-repeat center / cover;
+  &-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+  }
+  &-menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  &-menu-link {
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.25s linear;
+  }
+  &-menu-link:hover {
+    color: $secondary-color;
+    border-bottom-color: $secondary-color;
+  }
+  &-menu-icon {
+    color: white;
+  }
+  &-top {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &-menu {
+    display: flex;
+  }
+  &-menu-item:not(:first-child) {
+    margin-left: 5rem;
+  }
+  &-content {
+    padding-top: 17rem;
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  &-content-caption {
+    font-size: 7.2rem;
+    margin-bottom: 4rem;
+    font-family: $third-font;
+  }
+  &-content-main {
+    font-size: 15rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    position: relative;
+    &:after {
+      content: "";
+      bottom: 0;
+      @include absoluteCenter("left");
+      width: 6rem;
+      height: 0.5rem;
+      background-color: #fff;
+    }
+  }
+  &-content-more {
+    text-transform: uppercase;
+    border: 4px solid white;
+    padding: 1rem 3rem;
+    color: white;
+    font-weight: bold;
+  }
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16rem;
+    padding-bottom: 2.5rem;
+  }
+  &-bottom-item {
+    width: calc(25% - 3rem);
+    margin-left: 3rem;
+    border-top: 4px solid white;
+    padding-top: 2.5rem;
+    opacity: 0.6;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+  &-bottom-item:before {
+    content: "";
+    height: 4px;
+    background-color: $primary-color;
+    width: 7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  &-bottom-item:hover,
+  &-bottom-item.is-active {
+    opacity: 1;
+    &:before {
+      opacity: 1;
+    }
+  }
+  &-bottom-number {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+  &-bottom-text {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+  }
+  @media screen and (max-width: 1023px) {
+    min-height: unset;
+    .header-bottom {
+      margin-top: 5rem;
+    }
+    .header-bottom-item {
+      padding-top: 1.5rem;
+      text-align: center;
+    }
+    .header-content {
+      padding-top: 5rem;
+    }
+    .header-content-caption {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .header-content-main {
+      font-size: 5rem;
+    }
+    .header-menu {
+      position: fixed;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background-color: white;
+      width: 300px;
+      z-index: 10;
+      transform: translateX(100%);
+      transition: all 0.25s linear;
+    }
+    .header-menu {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem;
+    }
+    .header-menu-link {
+      padding-bottom: unset;
+      color: $title-color;
+      padding: 15px;
+      width: 100%;
+      border-radius: 4px;
+      &:hover {
+        background-color: $secondary-color;
+        color: white;
+      }
+    }
+    .header-menu-icon {
+      display: block;
+      padding: 15px;
+      color: $title-color;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+    .header-menu-item {
+      margin-left: unset;
+      margin-bottom: 1.5rem;
+    }
+    .header-menu.is-expand {
+      transform: translateX(0%);
+    }
+    .header-menu-toggle {
+      display: inline-block;
+      align-self: center;
+    }
+    .header-bottom-item:before {
+      width: 35%;
+    }
+    .header-bottom-text {
+      display: none;
+    }
+  }
+}

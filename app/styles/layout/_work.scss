@@ -1,0 +1,35 @@
+.work {
+  &-list {
+    @include flexBox();
+  }
+  &-col {
+    width: 25%;
+  }
+  &-content {
+    color: white;
+    text-align: center;
+  }
+  &-icon {
+    font-size: 3rem;
+  }
+  &-heading {
+    text-transform: uppercase;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+  }
+  &-text {
+    font-family: $secondary-font;
+    font-style: italic;
+    font-size: 1.5rem;
+  }
+  @include maxWidth(767px) {
+    &-list {
+      flex-wrap: wrap;
+    }
+    &-col {
+      width: calc(50%);
+    }
+  }
+}
+
+@include hoverEffect(".work-item", ".work-content", false);

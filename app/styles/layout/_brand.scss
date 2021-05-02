@@ -1,0 +1,6 @@
+.brand {
+  @include bg($gray-light-color);
+  .main {
+    padding: 6rem 1rem;
+  }
+}
