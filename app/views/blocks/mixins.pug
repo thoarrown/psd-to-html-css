@@ -56,7 +56,8 @@ mixin workItem(src, title, text)
         img.work-img(src= src)
         .work-content
             i.fas.fa-photo-video.work-icon
-            h4.work-heading= title
+            .work-heading-wrapper
+                h4.work-heading= title
             p.work-text= text
 
 mixin quoteItem(src, quote, author)

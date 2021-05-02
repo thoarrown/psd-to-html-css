@@ -78,6 +78,18 @@
     color: $text-color;
     margin-left: 5px;
   }
+  @include maxWidth(1023px) {
+    &-img {
+      height: 18rem;
+    }
+    &-bottom {
+      height: calc(100% - 18rem);
+      @include flexBox(stretch, space-between, column);
+    }
+    &-publishdate {
+      padding: 1rem;
+    }
+  }
   @include maxWidth(767px) {
     &-img {
       height: 20rem;
