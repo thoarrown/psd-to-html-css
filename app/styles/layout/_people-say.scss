@@ -39,6 +39,16 @@
       left: 0;
     }
   }
+  &-content {
+    @include textClamp(5);
+  }
+  @include maxWidth(1023px) {
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+    &-item {
+      padding: 0 2rem;
+    }
+  }
   @include maxWidth(767px) {
     padding-top: 8rem;
     padding-bottom: 8rem;

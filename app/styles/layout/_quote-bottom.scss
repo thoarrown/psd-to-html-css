@@ -17,6 +17,9 @@
   .quote-main-content {
     margin-bottom: 2rem;
   }
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
   @include maxWidth(767px) {
     padding: 5rem 0;
     .quote-left {

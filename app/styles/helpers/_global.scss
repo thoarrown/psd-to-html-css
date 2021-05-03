@@ -11,3 +11,11 @@ img {
   display: block;
   width: 100%;
 }
+input {
+  border: 1px #ccc solid;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box; /* works fine with IE8+ */
+  -moz-box-sizing: border-box; /* works fine Firefox */
+  -webkit-box-sizing: border-box;
+}

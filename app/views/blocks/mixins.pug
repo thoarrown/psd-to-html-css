@@ -75,3 +75,23 @@ mixin sayItem(src, name, position, content)
             h4.say-name= name
             span.say-position= position
             p.say-content= content
+
+mixin footerItem(iconClass= "fab fa-facebook-f")
+    li.footer-social-item
+        i.footer-social-icon(class= iconClass)
+
+//- mixin quoteItem(src, content, author)
+//-     .quote-item
+//-         .quote-left
+//-             img.quote-img(src= src)
+//-         .quote-main
+//-             .quote-main-content= content
+//-             .quote-main-by= author
+
+mixin footerPostItem(src, title, date)
+    .footer-post-item
+        img.footer-post-img(src= src,
+        alt= title)
+        .footer-post-info
+            h5.footer-post-title= title
+            span.footer-post-date=  date
