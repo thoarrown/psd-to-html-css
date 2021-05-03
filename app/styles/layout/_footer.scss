@@ -55,8 +55,9 @@
     margin-top: auto;
     @include flexBox;
     &-email {
-      border: 1px solid $gray-dark-color;
-      border-right: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      //   border-right: none;
       outline: none;
       padding: 1.5rem;
       color: $text-color;

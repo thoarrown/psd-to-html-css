@@ -19,8 +19,11 @@ window.addEventListener("click", function (e) {
             el.classList.remove("is-active")
         })
         let bodyContent = e.target.parentElement.querySelector(".wedo-body")
+        console.log(bodyContent);
         if (!bodyContent)
             bodyContent = e.target.parentElement.parentElement.querySelector(".wedo-body")
+        console.log(bodyContent);
+
         if (!bodyContent.classList.contains("is-active")) {
             let icon = e.target.parentElement.querySelector(".wedo-header-icon")
             icon.classList.remove("fa-chevron-up")
