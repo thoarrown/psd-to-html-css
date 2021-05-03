@@ -9,33 +9,6 @@ window.addEventListener("click", function (e) {
         menuBar.classList.remove("is-expand");
 })
 
-// window.addEventListener("click", function (e) {
-//     if (e.target.classList.contains("wedo-header") || e.target.parentElement.classList.contains("wedo-header")) {
-//         document.querySelectorAll(".wedo-body").forEach(el => {
-//             if (el.parentElement.contains(e.target)) return
-//             let icon = el.parentElement.querySelector(".wedo-header-icon")
-//             icon.classList.remove("fa-chevron-down")
-//             icon.classList.add("fa-chevron-up")
-//             el.classList.remove("is-active")
-//         })
-//         let bodyContent = e.target.parentElement.querySelector(".wedo-body")
-//         if (!bodyContent)
-//             bodyContent = e.target.parentElement.parentElement.querySelector(".wedo-body")
-
-//         if (!bodyContent.classList.contains("is-active")) {
-//             let icon = e.target.parentElement.querySelector(".wedo-header-icon")
-//             icon.classList.remove("fa-chevron-up")
-//             icon.classList.add("fa-chevron-down")
-//             bodyContent.classList.add("is-active")
-//         }
-//         else {
-//             let icon = e.target.parentElement.querySelector(".wedo-header-icon")
-//             bodyContent.classList.remove("is-active");
-//             icon.classList.add("fa-chevron-up")
-//             icon.classList.remove("fa-chevron-down")
-//         }
-//     }
-// })
 // sYfnzDWGS8!
 
 // Slick slider
