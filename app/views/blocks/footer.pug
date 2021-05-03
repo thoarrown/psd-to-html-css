@@ -1,0 +1,54 @@
+section.footer
+    .container
+        .footer-main
+            .footer-info
+                h2.footer-heading-logo MoGo
+                p.footer-desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .footer-follower
+                    span.footer-follower-number 112
+                    span.footer-follower-text Followers
+                .footer-social
+                    span.footer-social-text Follow us:
+                    ul
+                        +footerItem()
+                        +footerItem("fab fa-twitter")
+                        +footerItem("fab fa-instagram")
+                        +footerItem("fab fa-pinterest")
+                        +footerItem("fab fa-google")
+                        +footerItem("fab fa-youtube")
+                        +footerItem("fab fa-dribbble")
+                        +footerItem("fab fa-tumblr")
+                .footer-form
+                    input.footer-form-email(type="email", placeholder="Your email...")
+                    button.footer-form-btn(action="submit") Subscribe
+            .footer-posts
+                h4.footer-heading Blogs
+                .footer-posts-wrapper
+                    +footerPostItem("../../images/img-blogs1.png","Lorem ipsum dolor sit amet", "Jan 9, 2020")
+                    +footerPostItem("../../images/img-blogs2.png","Consectetur adipisicing elit", "Jan 9, 2020")
+                    +footerPostItem("../../images/img-blogs3.png","sed do eiusmod tempor incididunt ut labore et dolore magna aliqua","Jan 9, 2020")
+            .footer-instagram
+                h4.footer-heading instagram
+                ul.footer-instagram-images
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                    li.footer-instagram-img
+                        img(src= "../../images/img-instagram1.png")
+                p.footer-instagram-more View more photos
+        .footer-copyright
+            span.footer-copyright-text &#169; 2016 MoGo free PSD template by
+            span.footer-copyright-author Laaqiq

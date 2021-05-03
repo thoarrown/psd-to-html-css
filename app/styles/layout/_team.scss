@@ -1,0 +1,94 @@
+.team {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  &-list {
+    @include flexBox();
+    margin-top: 9rem;
+  }
+  &-member-avatar {
+    @include size(100%, 47rem);
+  }
+  &-member {
+    width: calc(33.333% - 3rem);
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+  &-member-social ul {
+    @include flexBox();
+  }
+  &-social-item {
+    background-color: $secondary-color;
+    &:not(:last-child) {
+      border-right: 0.5px solid $primary-color;
+    }
+  }
+  &-social-link {
+    @include flexBox(center, center);
+    @include size(6rem);
+    transition: all 0.2s linear;
+    padding: 1.5rem;
+    i {
+      color: $primary-color;
+      transition: all 0.2s linear;
+    }
+    &:hover {
+      background-color: $primary-color;
+      i {
+        color: white;
+      }
+    }
+  }
+  &-member-icon {
+    font-size: 2.5rem;
+  }
+  &-member-info {
+    text-align: center;
+    padding: 0 2rem;
+    height: calc(100% - 47rem);
+    @include flexBox(center, space-between, column);
+  }
+  &-member-name {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    @include textClamp(2);
+  }
+  &-member-position {
+    font-style: italic;
+    color: $gray-dark-color;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+    &-list {
+      @include touchScroll(55%);
+      margin-top: 5rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      grid-auto-columns: 90%;
+    }
+    &-member-avatar {
+      height: 30rem;
+      object-fit: cover;
+    }
+    &-member-info {
+      height: calc(100% - 30rem);
+    }
+    &-member-name {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    &-member-position {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@include hoverEffect(".team-member-content", ".team-member-social");

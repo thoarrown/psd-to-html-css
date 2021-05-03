@@ -1,0 +1,99 @@
+.wedo {
+  display: block;
+  padding: 10rem 0;
+  &-content {
+    @include flexBox();
+    height: 38rem;
+    margin-top: 9rem;
+  }
+  &-img {
+    width: calc(50% - 3rem);
+    display: inline-block;
+    padding-right: 3rem;
+  }
+  &-list {
+    width: 50%;
+  }
+  &-item {
+    @include flexBox(center, center, column);
+    margin-bottom: 1rem;
+    transition: all 0.5s linear;
+  }
+  &-header {
+    @include flexBox(center, center);
+    border: 1px solid $gray-light-color;
+    padding: 1.5rem;
+    width: 100%;
+    cursor: pointer;
+    &-img {
+      width: 3rem;
+      margin-right: 1.5rem;
+    }
+    &-heading {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    &-icon {
+      margin-left: auto;
+      font-size: 2rem;
+      color: $gray-dark-color;
+    }
+  }
+  &-body {
+    display: none;
+    padding: 2rem;
+    width: 100%;
+    border: 1px solid $gray-light-color;
+    border-top: none;
+  }
+  &-body.is-active {
+    display: inline-block;
+  }
+  &-body-content {
+    height: 12.8rem;
+    border: none;
+    resize: none;
+    width: 100%;
+    font-style: italic;
+    font-family: $secondary-font;
+    line-height: 1.6;
+    color: $text-color;
+    font-size: 1.5rem;
+    font-weight: 300;
+    overflow-y: scroll;
+    padding-right: 2rem;
+    display: inline-block;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: $gray-light-color;
+      border-radius: 2rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $third-color;
+      border-radius: 2rem;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-content {
+      @include flexBox(center, center, column);
+      height: unset;
+      margin-top: 5rem;
+    }
+    &-img {
+      width: 100%;
+      display: inline-block;
+      padding-right: unset;
+    }
+    &-list {
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    &-body-content {
+      padding-right: 1.5rem;
+    }
+  }
+}

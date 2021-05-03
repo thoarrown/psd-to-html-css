@@ -1,0 +1,200 @@
+.footer {
+  padding-top: 7rem;
+  &-main {
+    @include flexBox;
+    padding-bottom: 7rem;
+    border-bottom: 1px solid $gray-dark-color;
+  }
+  &-info {
+    width: 40%;
+    margin-right: 3rem;
+    @include flexBox(stretch, stretch, column);
+  }
+  &-heading-logo {
+    color: $gray-dark-color;
+    font-size: 4.6rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+  }
+  &-desc {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: $text-color;
+    margin-bottom: 4.5rem;
+  }
+  &-follower {
+    padding-bottom: 2rem;
+    // width: 100%;
+    border-bottom: 1px solid $gray-dark-color;
+    &-number {
+      font-weight: 600;
+      font-size: 1.8rem;
+    }
+    &-text {
+      margin-left: 1rem;
+    }
+  }
+  &-social {
+    @include flexBox;
+    margin-top: 1.5rem;
+    &-text {
+      font-style: italic;
+      color: $text-color;
+      margin-right: 2rem;
+    }
+    ul {
+      @include flexBox;
+      color: $third-color;
+    }
+    &-item {
+      margin-right: 1rem;
+    }
+  }
+  &-form {
+    margin-top: auto;
+    @include flexBox;
+    &-email {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      //   border-right: none;
+      outline: none;
+      padding: 1.5rem;
+      color: $text-color;
+      &::placeholder {
+        font-family: $secondary-font;
+        font-style: italic;
+        color: $text-color;
+      }
+    }
+    &-btn {
+      border: none;
+      padding: 1.5rem 3.5rem;
+      @include bg($third-color);
+      text-transform: uppercase;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+  &-heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 4rem;
+  }
+  &-posts {
+    margin-right: 3rem;
+    width: 30%;
+    &-wrapper {
+      @include flexBox(flex-start, space-between, column);
+      height: calc(100% - 5.4rem);
+    }
+  }
+  &-post {
+    &-item {
+      @include flexBox(center, space-between);
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+    &-img {
+      @include size(12rem, auto);
+    }
+    &-info {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    &-title {
+      @include textClamp(2);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      font-size: 1.2rem;
+    }
+    &-date {
+      font-style: italic;
+      color: $text-color;
+      font-size: 1.3rem;
+    }
+  }
+  &-instagram {
+    width: calc(100% - 70% - 9rem);
+    margin-left: 3rem;
+    @include flexBox(stretch, stretch, column);
+    &-images {
+      @include flexBox(stretch, stretch, row, wrap);
+    }
+    &-img {
+      width: calc(33.33% - 0.3rem);
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    &-more {
+      margin-top: auto;
+      font-style: italic;
+      font-family: $secondary-font;
+      color: $text-color;
+    }
+  }
+  &-copyright {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+    &-text {
+      color: $text-color;
+    }
+    &-author {
+      margin-left: 0.5rem;
+      color: $primary-color;
+    }
+  }
+  @include maxWidth(1023px) {
+    &-main {
+      padding-bottom: 4rem;
+    }
+    &-desc {
+      @include textClamp(4);
+      margin-bottom: 2rem;
+    }
+    &-social {
+      margin-bottom: 2rem;
+    }
+    &-social-text {
+      margin-right: 1rem;
+    }
+    &-posts {
+      margin-right: 1rem;
+    }
+    &-post-img {
+      @include size(auto, 6rem);
+    }
+    &-post-info {
+      padding-right: 0;
+    }
+    &-instagram {
+      width: calc(30%);
+    }
+  }
+  @include maxWidth(676px) {
+    &-main {
+      flex-direction: column;
+    }
+    &-info {
+      width: 100%;
+    }
+    &-posts {
+      width: 100%;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    &-instagram {
+      width: 100%;
+      margin-left: unset;
+
+      &-more {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

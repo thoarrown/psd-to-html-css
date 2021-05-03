@@ -1,0 +1,48 @@
+.about {
+  padding-top: 9rem;
+  padding-bottom: 10rem;
+  background: white;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+    margin-top: 10rem;
+  }
+  &-image {
+    height: 100%;
+    object-fit: cover;
+  }
+  &-item {
+    height: 25rem;
+  }
+  &-content {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2rem;
+  }
+  &-icon {
+    font-size: 2.5rem;
+  }
+  &-title {
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    @include textClamp(2);
+  }
+  @include maxWidth(1023px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &-item {
+      height: 18rem;
+    }
+    &-list {
+      @include touchScroll;
+    }
+    &-item {
+      scroll-snap-align: start;
+    }
+  }
+}
+@include hoverEffect(".about-item", ".about-content");

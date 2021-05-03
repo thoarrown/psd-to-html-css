@@ -1,0 +1,32 @@
+.quote-bottom {
+  padding: 10rem 0;
+  .container {
+    position: relative;
+  }
+  .quote-left {
+    border: none;
+    @include size(21rem);
+  }
+  .quote-img {
+    padding: unset;
+  }
+  .quote-main {
+    font-size: 2.4rem;
+    justify-content: stretch;
+  }
+  .quote-main-content {
+    margin-bottom: 2rem;
+  }
+  .slick-initialized .slick-slide {
+    display: flex;
+  }
+  @include maxWidth(767px) {
+    padding: 5rem 0;
+    .quote-left {
+      @include size(15rem);
+    }
+    .quote-main {
+      font-size: 1.8rem;
+    }
+  }
+}

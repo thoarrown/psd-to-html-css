@@ -1,0 +1,157 @@
+.post {
+  padding-top: 11rem;
+  padding-bottom: 11rem;
+  &-list {
+    // @include flexBox();
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+  &-item {
+    // width: calc(33.333%);
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+  &-content {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $gray-dark-color;
+    height: calc(100% - 3.5rem);
+  }
+  &-top {
+    position: relative;
+  }
+  &-bottom {
+    height: calc(100% - 24rem);
+  }
+  &-img {
+    height: 24rem;
+  }
+  &-publishdate {
+    position: absolute;
+    bottom: 1rem;
+    left: -1rem;
+    background-color: $third-color;
+    padding: 1.5rem;
+    color: white;
+  }
+  &-day {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  &-month {
+    margin-top: 5px;
+    font-style: italic;
+    font-family: $secondary-font;
+  }
+  &-title {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    @include textClamp(3, 100%, word-break);
+  }
+  &-desc {
+    font-family: $secondary-font;
+    color: $text-color;
+    line-height: 1.5;
+    @include textClamp(3);
+  }
+  &-interact {
+    @include flexBox;
+    margin-top: 2rem;
+    i {
+      color: $third-color;
+    }
+  }
+  &-view {
+    margin-right: 2rem;
+  }
+  &-view-number,
+  &-comment-number {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: $text-color;
+    margin-left: 5px;
+  }
+  @include maxWidth(1023px) {
+    &-img {
+      height: 18rem;
+    }
+    &-bottom {
+      height: calc(100% - 18rem);
+      @include flexBox(stretch, space-between, column);
+    }
+    &-publishdate {
+      padding: 1rem;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    &-img {
+      height: 16rem;
+    }
+    &-item {
+      margin-right: 1.5rem !important;
+    }
+    &-list {
+      @include touchScroll;
+      grid-column-gap: 1rem;
+    }
+    &-bottom {
+      height: calc(100% - 16rem);
+    }
+    &-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    &-desc {
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+  }
+}
+.map {
+  background: linear-gradient(to bottom, rgba(#f3f3f3, 0.8), rgba(#f3f3f3, 0.8)),
+    url(../../images/img-map.png) no-repeat center / cover;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+  &-wrapper {
+    @include flexBox(center, center, column);
+  }
+  &-img {
+    @include size(auto, 3rem);
+    margin-bottom: 2rem;
+  }
+  &-heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $primary-color;
+    font-size: 2.4rem;
+    position: relative;
+    padding-bottom: 2rem;
+    &:after {
+      content: "";
+      bottom: 0;
+      @include size(6rem, 4px);
+      @include absoluteCenter("left");
+      @include bg($primary-color);
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    &-img {
+      @include size(auto, 2.5rem);
+    }
+    &-heading {
+      font-size: 2rem;
+    }
+  }
+}

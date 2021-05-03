@@ -1,0 +1,97 @@
+mixin menuLink(title, href = "#")
+    li.header-menu-item
+        a.header-menu-link(href= href)= title
+
+mixin headerBottomItem(number, text )
+    .header-bottom-item.is-active
+        span.header-bottom-number= number
+        span.header-bottom-text= text
+
+mixin blockBox(caption, title, desc)
+    .block-box
+        h3.block-box-caption= caption
+        h2.block-box-title= title
+        if desc
+            p.block-box-desc= desc
+
+mixin aboutItem(src, title, iconClass, alt="")
+    .about-item
+        img.about-image(src= src, alt= alt)
+        .about-content
+            i.fa.about-icon(class= iconClass)
+            span.about-title= title
+
+
+mixin serviceItem(src, title, desc)
+    .amazing-item
+        img.amazing-item-image(src= src)
+        .amazing-item-right
+            span.amazing-item-title= title
+            p.amazing-item-desc= desc
+
+mixin teamMember(avatar, name, position)
+    .team-member
+        .team-member-content
+            img.team-member-avatar(src= avatar)
+            .team-member-social
+                ul
+                    li.team-social-item
+                        a.team-social-link(href="#")
+                            i.fab.fa-facebook-f.team-member-icon
+                    li.team-social-item
+                        a.team-social-link(href="#")
+                            i.fab.fa-twitter.team-member-icon
+                    li.team-social-item
+                        a.team-social-link(href="#")
+                            i.fab.fa-pinterest.team-member-icon
+                    li.team-social-item
+                        a.team-social-link(href="#")
+                            i.fab.fa-instagram.team-member-icon
+        .team-member-info
+            h4.team-member-name= name
+            span.team-member-position= position
+
+mixin workItem(src, title, text)
+    .work-item
+        img.work-img(src= src)
+        .work-content
+            i.fas.fa-photo-video.work-icon
+            .work-heading-wrapper
+                h4.work-heading= title
+            p.work-text= text
+
+mixin quoteItem(src, quote, author)
+    .quote-item
+        .quote-left
+            img.quote-img(src= src)
+        .quote-main
+            .quote-main-content= quote
+            .quote-main-by= author
+
+mixin sayItem(src, name, position, content)
+    .say-item
+        img.say-avatar(src= src, alt="")
+        .say-desc
+            h4.say-name= name
+            span.say-position= position
+            p.say-content= content
+
+mixin footerItem(iconClass= "fab fa-facebook-f")
+    li.footer-social-item
+        i.footer-social-icon(class= iconClass)
+
+//- mixin quoteItem(src, content, author)
+//-     .quote-item
+//-         .quote-left
+//-             img.quote-img(src= src)
+//-         .quote-main
+//-             .quote-main-content= content
+//-             .quote-main-by= author
+
+mixin footerPostItem(src, title, date)
+    .footer-post-item
+        img.footer-post-img(src= src,
+        alt= title)
+        .footer-post-info
+            h5.footer-post-title= title
+            span.footer-post-date=  date

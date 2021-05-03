@@ -1,0 +1,22 @@
+a {
+  text-decoration: none;
+}
+body {
+  font-family: $primary-font;
+  line-height: 1;
+  color: $title-color;
+  font-size: 1.4rem;
+}
+img {
+  display: block;
+  width: 100%;
+}
+input {
+  -webkit-appearance: none;
+  border: 1px #ccc solid;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box; /* works fine with IE8+ */
+  -moz-box-sizing: border-box; /* works fine Firefox */
+  -webkit-box-sizing: border-box;
+}
