@@ -9,9 +9,41 @@ window.addEventListener("click", function (e) {
         menuBar.classList.remove("is-expand");
 })
 
-window.addEventListener("click", function (e) {
-    console.log(e.target);
-    if (e.target.classList.contains("wedo-header") || e.target.parentElement.classList.contains("wedo-header")) {
+// window.addEventListener("click", function (e) {
+//     if (e.target.classList.contains("wedo-header") || e.target.parentElement.classList.contains("wedo-header")) {
+//         document.querySelectorAll(".wedo-body").forEach(el => {
+//             if (el.parentElement.contains(e.target)) return
+//             let icon = el.parentElement.querySelector(".wedo-header-icon")
+//             icon.classList.remove("fa-chevron-down")
+//             icon.classList.add("fa-chevron-up")
+//             el.classList.remove("is-active")
+//         })
+//         let bodyContent = e.target.parentElement.querySelector(".wedo-body")
+//         if (!bodyContent)
+//             bodyContent = e.target.parentElement.parentElement.querySelector(".wedo-body")
+
+//         if (!bodyContent.classList.contains("is-active")) {
+//             let icon = e.target.parentElement.querySelector(".wedo-header-icon")
+//             icon.classList.remove("fa-chevron-up")
+//             icon.classList.add("fa-chevron-down")
+//             bodyContent.classList.add("is-active")
+//         }
+//         else {
+//             let icon = e.target.parentElement.querySelector(".wedo-header-icon")
+//             bodyContent.classList.remove("is-active");
+//             icon.classList.add("fa-chevron-up")
+//             icon.classList.remove("fa-chevron-down")
+//         }
+//     }
+// })
+// sYfnzDWGS8!
+
+// Slick slider
+$(document).ready(function () {
+
+    $(".wedo-item").click(function (e) {
+        const element = e.target.closest('.wedo-item');
+
         document.querySelectorAll(".wedo-body").forEach(el => {
             if (el.parentElement.contains(e.target)) return
             let icon = el.parentElement.querySelector(".wedo-header-icon")
@@ -19,30 +51,19 @@ window.addEventListener("click", function (e) {
             icon.classList.add("fa-chevron-up")
             el.classList.remove("is-active")
         })
-        let bodyContent = e.target.parentElement.querySelector(".wedo-body")
-        console.log(bodyContent);
-        if (!bodyContent)
-            bodyContent = e.target.parentElement.parentElement.querySelector(".wedo-body")
-        console.log(bodyContent);
-
-        if (!bodyContent.classList.contains("is-active")) {
-            let icon = e.target.parentElement.querySelector(".wedo-header-icon")
+        const elementBody = element.querySelector(".wedo-body")
+        const icon = element.querySelector(".wedo-header-icon")
+        if (!element.querySelector(".is-active")) {
             icon.classList.remove("fa-chevron-up")
             icon.classList.add("fa-chevron-down")
-            bodyContent.classList.add("is-active")
+            elementBody.classList.add("is-active")
         }
         else {
-            let icon = e.target.parentElement.querySelector(".wedo-header-icon")
-            bodyContent.classList.remove("is-active");
             icon.classList.add("fa-chevron-up")
             icon.classList.remove("fa-chevron-down")
+            elementBody.classList.remove("is-active");
         }
-    }
-})
-// sYfnzDWGS8!
-
-// Slick slider
-$(document).ready(function () {
+    });
     $(".quote-list").slick({
         prevArrow:
             "<button type='button' class='slick-prev quote-icon-left quote-icon pull-left'><i class='fal fa-angle-left' aria-hidden='true'></i></button>",
