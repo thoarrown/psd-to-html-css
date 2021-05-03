@@ -10,6 +10,7 @@ window.addEventListener("click", function (e) {
 })
 
 window.addEventListener("click", function (e) {
+    console.log(e.target);
     if (e.target.classList.contains("wedo-header") || e.target.parentElement.classList.contains("wedo-header")) {
         document.querySelectorAll(".wedo-body").forEach(el => {
             if (el.parentElement.contains(e.target)) return
